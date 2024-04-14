@@ -1,4 +1,11 @@
 def point_in_polygon(point, edges) -> bool:
+    """
+    Method to match point inside are of edges or not.
+
+    :param point:
+    :param edges:
+    :return inside:
+    """
     x, y = point
     inside = False
 
