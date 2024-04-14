@@ -9,6 +9,7 @@ import pygame as pg
 
 from components.bubble import Bubble
 from components.small_background_bubble import SmallBackgroundBubble
+from components.big_area1_bubble import BigArea1Bubble
 from utils.utils_const import *
 
 # Initialize pygame
@@ -26,11 +27,14 @@ pg.display.set_caption("Boiling Kettle")
 big_bubbles_speed = 0.1
 small_bubbles_speed = 0
 
-bubbles = []
+big_bubbles_area1 = []
 small_bubbles = []
 
 for bubble in range(0, 800):
     small_bubbles.append(SmallBackgroundBubble())
+
+for bubble in range(0, 500):
+    big_bubbles_area1.append(BigArea1Bubble())
 
 running = True
 clock = pg.time.Clock()
@@ -72,7 +76,7 @@ while running:
     big_bubbles_speed += 0.001
     small_bubbles_speed += 0.0005
 
-    for bubble in bubbles:
+    for bubble in big_bubbles_area1:
         bubble.update(big_bubbles_speed)
         bubble.draw(screen)
 
