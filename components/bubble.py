@@ -14,6 +14,6 @@ class Bubble:
         # Update self params
         pass
 
-    def draw(self, surface, screen):
+    def draw(self, surface):
         # Draw Bubble
         pass
