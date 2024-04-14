@@ -1,9 +1,3 @@
-class BubblyType(Enum):
-    BIG_BUBBLE_AREA1 = 1
-    SMALL_BUBBLE_BACKGROUND = 2
-    MIDDLE_BUBBLE_AREA2 = 3
-
-
 # Screen dimension
 WIDTH, HEIGHT = 1245, 700
 
