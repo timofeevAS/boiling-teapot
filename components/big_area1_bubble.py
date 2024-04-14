@@ -31,7 +31,7 @@ class BigArea1Bubble(Bubble):
         self.speed_x += 0.01  # Simulate gravity
 
         # If the circle goes above the screen, reset it
-        if self.x > TEAPOT_MAX_X - 50 or self.radius < 0.5 or self.y < 40:
+        if self.x > TEAPOT_MAX_X - 50 or self.radius < 0.5 or self.y < TEAPOT_MIN_Y:
             self.shape()
         else:
             self.radius -= self.radius * 0.05
