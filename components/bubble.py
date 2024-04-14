@@ -10,10 +10,10 @@ class Bubble:
         # Generate shape
         pass
 
-    def update(self):
+    def update(self, speed_delta):
         # Update self params
         pass
 
-    def draw(self, surface):
+    def draw(self, surface, screen):
         # Draw Bubble
         pass
