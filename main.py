@@ -119,9 +119,9 @@ while running:
             sys.exit()
 
     pg.display.flip()
-    clock.tick(1000)
+    clock.tick(100)
     print(time.time() - start_time)
-    if time.time() - start_time > 10 and not background_switched:
+    if time.time() - start_time > 13 and not background_switched:
         background = pg.image.load('media/teapot_background_white.png')
         background = pg.transform.scale(background, (WIDTH, HEIGHT))
         background_switched = True

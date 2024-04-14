@@ -1,6 +1,7 @@
 import pygame as pg
 
 from utils.utils_const import *
+import random
 
 
 class Bubble:
@@ -24,5 +25,11 @@ class Bubble:
         screen = surface
         surface = pg.Surface((self.radius * 2, self.radius * 2), pg.SRCALPHA)
         pg.draw.circle(surface, self.main_color, (self.radius, self.radius), self.radius)
-        pg.draw.circle(surface, LIGHT_GRAY, (self.radius / 2, self.radius / 2), self.radius / 2)
+        # Выбор случайных координат для внутреннего круга
+        inner_radius = self.radius / 2
+        inner_x = random.uniform(inner_radius, self.radius * 2 - inner_radius)
+        inner_y = random.uniform(inner_radius, self.radius * 2 - inner_radius)
+
+        # Отрисовка внутреннего круга
+        pg.draw.circle(surface, LIGHT_GRAY, (int(inner_x), int(inner_y)), int(inner_radius))
         screen.blit(surface, (self.x - self.radius, self.y - self.radius))
