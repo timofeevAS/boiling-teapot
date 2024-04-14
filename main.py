@@ -10,6 +10,7 @@ import pygame as pg
 from components.bubble import Bubble
 from components.small_background_bubble import SmallBackgroundBubble
 from components.big_area1_bubble import BigArea1Bubble
+from utils.utils import point_in_polygon
 from utils.utils_const import *
 
 # Initialize pygame
@@ -30,10 +31,10 @@ small_bubbles_speed = 0
 big_bubbles_area1 = []
 small_bubbles = []
 
-for bubble in range(0, 800):
+for bubble in range(0, 400):
     small_bubbles.append(SmallBackgroundBubble())
 
-for bubble in range(0, 500):
+for bubble in range(0, 150):
     big_bubbles_area1.append(BigArea1Bubble())
 
 running = True
@@ -78,6 +79,7 @@ while running:
 
     for bubble in big_bubbles_area1:
         bubble.update(big_bubbles_speed)
+        bubble.update_collisions(big_bubbles_area1)
         bubble.draw(screen)
 
     for bubble in small_bubbles:
