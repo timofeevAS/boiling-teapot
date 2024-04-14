@@ -34,6 +34,7 @@ ORANGE = (255, 165, 0)
 YELLOW = (225, 225, 0)
 PINK = (230, 50, 230)
 RED = (255, 25, 25)
+LIGHT_GRAY = (232, 232, 224, 64)
 
 BLUE = (0, 0, 255)
 TRANSPARENT_BLUE = (64, 128, 255, 64)  # 50% transparency (128/255)

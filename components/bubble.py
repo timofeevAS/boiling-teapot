@@ -1,3 +1,8 @@
+import pygame as pg
+
+from utils.utils_const import *
+
+
 class Bubble:
     def __init__(self):
         self.angle = None
@@ -15,5 +20,8 @@ class Bubble:
         pass
 
     def draw(self, surface):
-        # Draw Bubble
-        pass
+        screen = surface
+        surface = pg.Surface((self.radius * 2, self.radius * 2), pg.SRCALPHA)
+        pg.draw.circle(surface, TRANSPARENT_BLUE, (self.radius, self.radius), self.radius)
+        pg.draw.circle(surface, LIGHT_GRAY, (self.radius / 2, self.radius / 2), self.radius / 2)
+        screen.blit(surface, (self.x - self.radius, self.y - self.radius))
