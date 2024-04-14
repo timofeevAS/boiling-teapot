@@ -9,6 +9,7 @@ class Bubble:
         self.speed, self.speed_x, self.speed_y = None, None, None
         self.x, self.y = None, None
         self.radius = None
+        self.main_color = TRANSPARENT_BLUE
         self.shape()
 
     def shape(self):
@@ -22,6 +23,6 @@ class Bubble:
     def draw(self, surface):
         screen = surface
         surface = pg.Surface((self.radius * 2, self.radius * 2), pg.SRCALPHA)
-        pg.draw.circle(surface, TRANSPARENT_BLUE, (self.radius, self.radius), self.radius)
+        pg.draw.circle(surface, self.main_color, (self.radius, self.radius), self.radius)
         pg.draw.circle(surface, LIGHT_GRAY, (self.radius / 2, self.radius / 2), self.radius / 2)
         screen.blit(surface, (self.x - self.radius, self.y - self.radius))

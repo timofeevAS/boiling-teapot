@@ -17,7 +17,7 @@ from utils.utils_const import *
 # Initialize pygame
 pg.init()
 
-DEBUG_MODE = True
+DEBUG_MODE = False
 
 # Create the screen
 screen = pg.display.set_mode((WIDTH, HEIGHT))
@@ -41,8 +41,7 @@ for bubble in range(0, 400):
 for bubble in range(0, 150):
     big_bubbles_area1.append(BigArea1Bubble())
 
-for bubble in range(0, 100):
-    mid_bubbles_area2.append(MidArea2Bubble())
+
 
 running = True
 clock = pg.time.Clock()
@@ -92,6 +91,24 @@ while running:
     for bubble in mid_bubbles_area2:
         bubble.update(big_bubbles_speed)
         bubble.draw(screen)
+
+    # add new bubble
+    if len(mid_bubbles_area2) < 100:
+        for bubble in range(0, 2):
+
+            new_x = random.randint(500, 910)
+            new_y = random.randint(110, 520)
+            point = (new_x, new_y)
+
+            while not point_in_polygon(point, SMALL_BUBBLES_AREA):
+                new_x = random.randint(500, 910)
+                new_y = random.randint(110, 520)
+                point = (new_x, new_y)
+
+            bubble = MidArea2Bubble()
+            bubble.setPoint(point)
+            mid_bubbles_area2.append(bubble)
+
 
     for bubble in small_bubbles:
         bubble.update(small_bubbles_speed)
