@@ -13,7 +13,7 @@ class BigArea1Bubble(Bubble):
 
     def shape(self):
         self.x = random.randint(TEAPOT_MIN_X + 50, TEAPOT_MAX_X - 50)
-        self.y = TEAPOT_MAX_Y
+        self.y = TEAPOT_MAX_Y-50
         self.radius = random.randint(20, 30)
         self.speed_y = -random.randint(2, 10)
         self.speed_x = (random.randint(1, 10) / 10) * math.sqrt(abs(self.speed_y))
