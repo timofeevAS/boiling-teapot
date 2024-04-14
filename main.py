@@ -7,8 +7,7 @@ from enum import Enum
 
 import pygame as pg
 
-from bubble import Bubble
-from utils import point_in_polygon
+from components.bubble import Bubble
 
 # Initialize pygame
 pg.init()
