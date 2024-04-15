@@ -5,6 +5,8 @@
 In this repository places visualisation of boiling teapot, with using
 primitive figures. (_circle_)
 
+![Example](./example.gif)
+
 ### Project structure
 * `media` - directory with supporting pictures;
 * `componentes` - directory with classes for implementation bubbles;
